@@ -2,6 +2,7 @@ package file_service
 
 import (
 	"os"
+	"time"
 
 	"github.com/google/uuid"
 )
@@ -34,4 +35,9 @@ func exists(path string) (bool, error) {
 		return false, nil
 	}
 	return false, err
+}
+
+func GetCurrentTime() string {
+	t := time.Now()
+	return t.Format("2006-01-02 15:04:05")
 }
